@@ -1,6 +1,5 @@
 # Panduan Penjelasan Kode: Website Burjo Sahabat
 
-File README ini dibuat untuk membantu kamu menjelaskan alur dan fungsi-fungsi kode pada video presentasi/responsi kamu.
 
 ## 📁 Struktur Folder & File
 
@@ -54,11 +53,3 @@ Halaman-halaman detail dirancang sederhana untuk memberikan informasi ekstra. Be
 * **Tag `<sup>` (Superscript)**: Digunakan untuk menulis teks kecil agak ke atas, contoh: 250<sup>gram</sup>.
 * **Tag `<sub>` (Subscript)**: Digunakan untuk menulis teks kecil agak ke bawah, contoh: kkal<sub>per porsi</sub>.
 * Tombol "Kembali" dibuat menggunakan tag tautan `<a>` biasa yang diberi desain *button* melalu CSS (`class="btn-back"`), dan mengarah kembali ke `index.html`.
-
----
-
-## 🎥 Tips Presentasi Video
-1. Buka file `index.html` di dalam text editor (seperti VS Code) berdampingan (split screen) dengan *web browser*.
-2. Praktekkan menekan tombol `+`, lalu tunjukkan di kode JavaScript bagian mana yang bekerja (fungsi `tambah()`).
-3. Praktekkan klik "Pesan Sekarang" dengan kondisi nama kosong untuk menunjukkan bahwa fitur validasi di fungsi `pesanSekarang()` berfungsi dengan baik.
-4. Jangan lupa arahkan kursor ke komentar `//` yang sudah ditambahkan di kode untuk mempermudah ingatan kamu saat presentasi.
