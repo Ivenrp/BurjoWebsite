@@ -1,0 +1,370 @@
+/* ===== RESET & BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+/* ===== HEADINGS ===== */
+h1 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: rgb(57, 34, 34);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: bold;
+  color: orangered;
+  margin-bottom: 8px;
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #27ae60;
+  margin-bottom: 8px;
+}
+
+/* ===== PARAGRAF ===== */
+p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+/* ===== HIGHLIGHT (mark) ===== */
+mark {
+  background-color: yellow;
+  color: #000;
+  padding: 0 2px;
+}
+
+/* ===== SMALL / CATATAN ===== */
+small {
+  font-size: 11px;
+  color: #777;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* ===== BOLD & STRONG ===== */
+strong {
+  font-weight: bold;
+}
+
+/* ===== STRIKETHROUGH ===== */
+s, del {
+  color: #999;
+}
+
+/* ===== SUP / SUPERSCRIPT ===== */
+sup {
+  font-size: 9px;
+  vertical-align: super;
+}
+
+/* ===== SUB / SUBSCRIPT ===== */
+sub {
+  font-size: 9px;
+  vertical-align: sub;
+}
+
+/* ===== DAFTAR MENU LABEL ===== */
+.daftar-label {
+  font-size: 13px;
+  font-weight: bold;
+  color: green;
+  margin-bottom: 6px;
+}
+
+/* ===== ORDERED LIST ===== */
+ol {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+ol li {
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 3px;
+}
+
+/* ===== UNORDERED LIST ===== */
+ul {
+  padding-left: 20px;
+  margin-bottom: 12px;
+}
+
+ul li {
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+/* ===== CARD CONTAINER ===== */
+.card-container {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* ===== CARD ===== */
+.card {
+  flex: 1;
+  border: 1px solid #e8d5b0;
+  border-radius: 8px;
+  padding: 14px 12px;
+  text-align: center;
+  background-color: #fdf6ec;
+}
+
+.card h2 {
+  font-size: 14px;
+  font-weight: bold;
+  color: orangered;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card p {
+  font-size: 12px;
+  color: #555;
+  text-align: center;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* ===== QUANTITY CONTROL ===== */
+.quantity-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.btn-minus,
+.btn-plus {
+  background-color: orangered;
+  color: #fff;
+  border: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-plus {
+  background-color: #27ae60;
+}
+
+.btn-minus:hover {
+  background-color: #a93226;
+}
+
+.btn-plus:hover {
+  background-color: #219a52;
+}
+
+.quantity-display {
+  font-size: 14px;
+  font-weight: bold;
+  min-width: 24px;
+  text-align: center;
+}
+
+/* ===== LIHAT DETAIL BUTTON ===== */
+.btn-detail {
+  display: inline-block;
+  background-color: orangered;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.btn-detail:hover {
+  background-color: #a93226;
+}
+
+/* ===== FORM PEMESANAN ===== */
+.form-section {
+  margin-bottom: 16px;
+}
+
+.form-section label {
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.form-section input[type="text"] {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.form-section input[type="text"]:focus {
+  outline: none;
+  border-color: #c0392b;
+  color: #333;
+}
+
+.btn-order {
+  background-color: orangered;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-order:hover {
+  background-color: #a93226;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  border-top: 1px dashed #ccc;
+  padding-top: 10px;
+  margin-top: 16px;
+  font-size: 12px;
+  color: #888;
+}
+
+/* ===== DIVIDER ===== */
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 14px 0;
+}
+
+/* ===== DETAIL PAGE ===== */
+.detail-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px 40px;
+}
+
+.detail-container h1 {
+  text-align: center;
+  font-size: 22px;
+  letter-spacing: 3px;
+  color: #2b2b2b;
+  margin-bottom: 20px;
+}
+
+.detail-container h2 {
+  font-size: 16px;
+  color: orangered;
+  margin-bottom: 16px;
+}
+
+.detail-container h3 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #27ae60;
+  margin-bottom: 10px;
+}
+
+.detail-container img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.detail-desc {
+  font-size: 13px;
+  color: #5a6a7a;
+  line-height: 1.7;
+  text-align: justify;
+  margin-bottom: 10px;
+}
+
+.detail-price-old {
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 2px;
+}
+
+.detail-price-new {
+  font-size: 13px;
+  color: #27ae60;
+  margin-bottom: 16px;
+}
+
+.detail-container ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.detail-container ul li {
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+/* ===== BACK BUTTON ===== */
+.btn-back {
+  display: inline-block;
+  background-color: #c0392b;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.btn-back:hover {
+  background-color: #a93226;
+}

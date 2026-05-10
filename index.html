@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Burjo Sahabat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- BAGIAN HEADER & DESKRIPSI -->
+  <h1>Menu Burjo Sahabat</h1><br>
+  <h2>Warung Makan Favorit Mahasiswa</h2>
+
+  <p>
+    Selamat datang di <mark>Burjo Sahabat</mark>, warung makan yang menyajikan berbagai menu
+    <strong>lezat</strong> dan <strong>terjangkau</strong> untuk mahasiswa.
+  </p>
+  <small>*Menu dan harga dapat berubah sewaktu-waktu.</small>
+
+  <!-- BAGIAN DAFTAR MENU (LIST) -->
+  <p class="daftar-label">Daftar Menu &amp; Pemesanan:</p>
+
+  <ol>
+    <li>Mie Goreng</li>
+    <li>Magelangan</li>
+    <li>Omelet</li>
+  </ol>
+
+  <!-- CARD MENU -->
+  <div class="card-container">
+
+    <!-- Card Mie Goreng -->
+    <div class="card">
+      <h2>Mie Goreng</h2>
+      <img src="images/mie-goreng.jpg" alt="Mie Goreng">
+      <p>
+        Mie goreng <mark>spesial</mark> dengan bumbu racikan khas. Harga mulai
+        Rp8.000,-
+      </p>
+      <div class="quantity-control">
+        <button class="btn-minus" onclick="kurang('qty1')">-</button>
+        <span class="quantity-display" id="qty1">0</span>
+        <button class="btn-plus" onclick="tambah('qty1')">+</button>
+      </div>
+      <a href="detail-mie-goreng.html" class="btn-detail">Lihat Detail »</a>
+    </div>
+
+    <!-- Card Magelangan -->
+    <div class="card">
+      <h2>Magelangan</h2>
+      <img src="images/magelangan.jpg" alt="Magelangan">
+      <p>
+        Magelangan <mark>komplit</mark> perpaduan nasi dan mie goreng. Harga mulai
+        Rp10.000,-
+      </p>
+      <div class="quantity-control">
+        <button class="btn-minus" onclick="kurang('qty2')">-</button>
+        <span class="quantity-display" id="qty2">0</span>
+        <button class="btn-plus" onclick="tambah('qty2')">+</button>
+      </div>
+      <a href="detail-magelangan.html" class="btn-detail">Lihat Detail »</a>
+    </div>
+
+    <!-- Card Omelet -->
+    <div class="card">
+      <h2>Omelet</h2>
+      <img src="images/omelet.jpg" alt="Omelet">
+      <p>
+        Omelet telur <mark>tebal</mark> dengan isian sayuran segar. Harga mulai
+        Rp7.000,-
+      </p>
+      <div class="quantity-control">
+        <button class="btn-minus" onclick="kurang('qty3')">-</button>
+        <span class="quantity-display" id="qty3">0</span>
+        <button class="btn-plus" onclick="tambah('qty3')">+</button>
+      </div>
+      <a href="detail-omelet.html" class="btn-detail">Lihat Detail »</a>
+    </div>
+
+  </div>
+
+  <!-- FORM PEMESANAN -->
+  <div class="form-section">
+    <label for="namaPemesan">Nama Pemesan:</label>
+    <input type="text" id="namaPemesan" placeholder="Masukkan nama Anda">
+    <button class="btn-order" onclick="pesanSekarang()">Pesan Sekarang</button>
+  </div>
+
+  <hr>
+
+  <footer>
+    &copy; 2026 Burjo Sahabat
+  </footer>
+
+  <script>
+    // Fungsi ini dipanggil saat tombol '+' ditekan pada sebuah menu
+    // Parameter 'id' adalah ID dari elemen span yang menampilkan angka (contoh: 'qty1')
+    function tambah(id) {
+      // Mengambil elemen HTML berdasarkan ID-nya
+      var el = document.getElementById(id);
+      // Mengambil nilai teks saat ini, mengubahnya jadi angka (integer), lalu ditambah 1
+      el.textContent = parseInt(el.textContent) + 1;
+    }
+
+    // Fungsi ini dipanggil saat tombol '-' ditekan
+    function kurang(id) {
+      var el = document.getElementById(id);
+      // Mengambil nilai angka saat ini
+      var val = parseInt(el.textContent);
+      // Validasi: Angka hanya akan dikurangi jika lebih besar dari 0
+      // Ini mencegah jumlah pesanan menjadi negatif (minus)
+      if (val > 0) {
+        el.textContent = val - 1;
+      }
+    }
+
+    // Fungsi utama yang dipanggil saat tombol 'Pesan Sekarang' ditekan
+    function pesanSekarang() {
+      // 1. MENGAMBIL INPUT PENGGUNA
+      // Mengambil teks dari kolom input nama
+      var nama = document.getElementById('namaPemesan').value;
+      // Mengambil teks/angka dari kuantitas masing-masing menu
+      var qty1 = document.getElementById('qty1').textContent;
+      var qty2 = document.getElementById('qty2').textContent;
+      var qty3 = document.getElementById('qty3').textContent;
+
+      // 2. VALIDASI NAMA
+      // .trim() digunakan untuk menghapus spasi kosong di awal dan akhir teks
+      // Jika nama ternyata kosong, tampilkan peringatan dan hentikan fungsi (return)
+      if (nama.trim() === '') {
+        alert('Silakan masukkan nama pemesan!');
+        return;
+      }
+
+      // 3. VALIDASI JUMLAH PESANAN
+      // Mengecek apakah semua kuantitas masih bernilai 0 (artinya belum ada menu yang dipilih)
+      if (parseInt(qty1) === 0 && parseInt(qty2) === 0 && parseInt(qty3) === 0) {
+        alert('Pilih minimal 1 menu terlebih dahulu!');
+        return;
+      }
+
+      // 4. MEMBANGUN OUTPUT PESAN (STRUK)
+      // Membuat variabel string untuk menyusun teks yang akan ditampilkan
+      var pesan = 'Pesanan berhasil!\n'; // \n untuk enter (baris baru)
+      pesan += 'Nama: ' + nama + '\n';
+      
+      // Mengecek satu per satu menu, jika jumlahnya lebih dari 0, tambahkan ke teks pesanan
+      if (parseInt(qty1) > 0) pesan += 'Mie Goreng: ' + qty1 + ' porsi\n';
+      if (parseInt(qty2) > 0) pesan += 'Magelangan: ' + qty2 + ' porsi\n';
+      if (parseInt(qty3) > 0) pesan += 'Omelet: ' + qty3 + ' porsi\n';
+
+      // 5. MENAMPILKAN HASIL
+      // Menampilkan ringkasan pesanan lewat pop-up alert browser
+      alert(pesan);
+    }
+  </script>
+
+</body>
+</html>
